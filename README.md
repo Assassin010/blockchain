@@ -64,7 +64,7 @@ This Go application interacts with the Polygon RPC API to fetch block numbers an
 ## Unit test documentation in a deployed ECS environment**,
 ## Mocks API requests and validates responses.
 
-## ** 1. Test the Running API on ECS**
+## 1. Test the Running API on ECS
 Once your application is running on **AWS ECS**, use **cURL or AWS CLI** to test it.
 
 ### **Find ECS Public IP or Load Balancer**
@@ -94,7 +94,7 @@ aws elb describe-load-balancers --region eu-west-1 --query "LoadBalancerDescript
 
 ---
 
-### ** 2. Run API Tests via cURL**
+### 2. Run API Tests via cURL
 #### **Check Block Number**
 ```sh
 curl http://<ECS_PUBLIC_IP>:8080/blockNumber
@@ -122,7 +122,7 @@ If using an **ALB**, replace `<ECS_PUBLIC_IP>` with `<ALB_DNS_NAME>`.
 
 ---
 
-## ** 3. Run Tests Locally Using AWS CLI**
+## 3. Run Tests Locally Using AWS CLI
 If your application is **not reachable**, you can test it **inside an ECS task**.
 
 #### **Run a Command Inside ECS Task**
@@ -141,7 +141,7 @@ Expected response:
 
 ---
 
-## ** 4. Run Tests Locally Before Deployment**
+## 4. Run Tests Locally Before Deployment
 If you want to **test locally before deploying**, run:
 
 ```sh
