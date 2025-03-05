@@ -13,26 +13,28 @@ This Go application interacts with the Polygon RPC API to fetch block numbers an
 │── go.sum                  # Go dependencies checksum
 │── /terraform              # Terraform folder for AWS ECS Fargate deployment
 │   ├── main.tf             # Defines ECS Fargate infrastructure
-│   ├── providers.tf        # Contains input variables
+│   ├── providers.tf        # Contains the provider
 │── README.md               # Documentation
 ```
 
 
 **File Explanations**
 
-main.go - Sets up the HTTP server and routes.
+* main.go - Sets up the HTTP server and routes.
 
-handlers.go - Contains HTTP handler functions (getBlockNumber, getBlockByNumber).
+* handlers.go - Contains HTTP handler functions (getBlockNumber, getBlockByNumber).
 
-rpc_client.go - Implements sendRPCRequest() to communicate with the Polygon RPC.
+* rpc_client.go - Implements sendRPCRequest() to communicate with the Polygon RPC.
 
-rpc_client_test.go - Unit tests for the RPC client functions.
+* rpc_client_test.go - Unit tests for the RPC client functions.
 
-Dockerfile - Defines how to containerize the Go application.
+* Dockerfile - Defines how to containerize the Go application.
 
-terraform/main.tf - AWS ECS Fargate configuration for deploying the application.
+* terraform/main.tf - AWS ECS Fargate configuration for deploying the application.
 
-README.md - Documentation including usage instructions and future improvements.
+* terraform/providers.tf
+
+* README.md - Documentation including usage instructions and future improvements.
 
 ```
           +-----------------+
