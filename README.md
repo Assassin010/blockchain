@@ -153,7 +153,7 @@ Then, in another terminal:
 curl http://localhost:8080/blockNumber
 ```
 
-## ** Summary**
+## 5. Summary
 -  **Find ECS Public IP or ALB DNS** (`aws ecs describe-tasks`)
 -  **Test API using `curl`**
 -  **Use AWS CLI to test inside ECS Task (`aws ecs execute-command`)**
