@@ -153,14 +153,7 @@ Then, in another terminal:
 curl http://localhost:8080/blockNumber
 ```
 
-## 5. Summary
--  **Find ECS Public IP or ALB DNS** (`aws ecs describe-tasks`)
--  **Test API using `curl`**
--  **Use AWS CLI to test inside ECS Task (`aws ecs execute-command`)**
--  **Test locally before deployment using Docker**
-- 
-
-## 6. Future Improvements for Production Readiness
+## 5. Future Improvements for Production Readiness
 
 1. **Logging & Monitoring**: Use structured logging with log aggregation (e.g., AWS CloudWatch, Loki).
 2. **Security**: Implement authentication for API requests.
