@@ -13,22 +13,25 @@ This Go application interacts with the Polygon RPC API to fetch block numbers an
 │── go.sum                  # Go dependencies checksum
 │── /terraform              # Terraform folder for AWS ECS Fargate deployment
 │   ├── main.tf             # Defines ECS Fargate infrastructure
-│   ├── variables.tf        # Contains input variables
-│   ├── outputs.tf          # Defines outputs for infrastructure
+│   ├── providers.tf        # Contains input variables
 │── README.md               # Documentation
 ```
 
 
-# File Explanations:
+**File Explanations**
 
 main.go - Sets up the HTTP server and routes.
+
 handlers.go - Contains HTTP handler functions (getBlockNumber, getBlockByNumber).
+
 rpc_client.go - Implements sendRPCRequest() to communicate with the Polygon RPC.
+
 rpc_client_test.go - Unit tests for the RPC client functions.
+
 Dockerfile - Defines how to containerize the Go application.
+
 terraform/main.tf - AWS ECS Fargate configuration for deploying the application.
-terraform/variables.tf - Defines Terraform input variables.
-terraform/outputs.tf - Specifies Terraform outputs.
+
 README.md - Documentation including usage instructions and future improvements.
 
 ```
@@ -59,7 +62,7 @@ README.md - Documentation including usage instructions and future improvements.
 ## Unit test documentation in a deployed ECS environment**,
 ## Mocks API requests and validates responses.
 
-## **✅ 1. Test the Running API on ECS**
+## ** 1. Test the Running API on ECS**
 Once your application is running on **AWS ECS**, use **cURL or AWS CLI** to test it.
 
 ### **Find ECS Public IP or Load Balancer**
@@ -89,7 +92,7 @@ aws elb describe-load-balancers --region eu-west-1 --query "LoadBalancerDescript
 
 ---
 
-### **✅ 2. Run API Tests via cURL**
+### ** 2. Run API Tests via cURL**
 #### **Check Block Number**
 ```sh
 curl http://<ECS_PUBLIC_IP>:8080/blockNumber
@@ -117,7 +120,7 @@ If using an **ALB**, replace `<ECS_PUBLIC_IP>` with `<ALB_DNS_NAME>`.
 
 ---
 
-## **✅ 3. Run Tests Locally Using AWS CLI**
+## ** 3. Run Tests Locally Using AWS CLI**
 If your application is **not reachable**, you can test it **inside an ECS task**.
 
 #### **Run a Command Inside ECS Task**
@@ -136,7 +139,7 @@ Expected response:
 
 ---
 
-## **✅ 4. Run Tests Locally Before Deployment**
+## ** 4. Run Tests Locally Before Deployment**
 If you want to **test locally before deploying**, run:
 
 ```sh
@@ -149,10 +152,10 @@ curl http://localhost:8080/blockNumber
 ```
 
 ## **🚀 Summary**
-- ✅ **Find ECS Public IP or ALB DNS** (`aws ecs describe-tasks`)
-- ✅ **Test API using `curl`**
-- ✅ **Use AWS CLI to test inside ECS Task (`aws ecs execute-command`)**
-- ✅ **Test locally before deployment using Docker**
+-  **Find ECS Public IP or ALB DNS** (`aws ecs describe-tasks`)
+-  **Test API using `curl`**
+-  **Use AWS CLI to test inside ECS Task (`aws ecs execute-command`)**
+-  **Test locally before deployment using Docker**
 - 
 
 ## Future Improvements for Production Readiness

@@ -54,7 +54,7 @@ resource "aws_security_group" "blockchain_sg" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"] # Allow all outbound traffic
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
@@ -110,8 +110,8 @@ resource "aws_ecs_cluster" "blockchain_cluster" {
 resource "aws_ecs_task_definition" "blockchain_task" {
   family                   = "blockchain-task"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = "512"  # Increased CPU from 256 to 512
-  memory                   = "1024" # Increased Memory from 512 to 1024
+  cpu                      = "512"
+  memory                   = "1024"
   network_mode             = "awsvpc"
   execution_role_arn       = aws_iam_role.ecs_execution_role.arn
   task_role_arn            = aws_iam_role.ecs_task_role.arn
