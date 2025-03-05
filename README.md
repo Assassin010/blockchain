@@ -162,4 +162,4 @@ curl http://localhost:8080/blockNumber
 5. **Configuration Management**: Use environment variables for sensitive information.
 6. **Health Checks**: Add `/health` endpoint to monitor the application's status.
 7. **Load Balancer**: Deploy behind an AWS ALB for better traffic handling.
-8. **Terraform Modules** Instead of using simple terraform resources use terraform modules to enhance reusability and maintainability.
+8. **Terraform Modules**: Instead of using simple terraform resources use terraform modules to enhance reusability and maintainability.
