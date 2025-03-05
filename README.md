@@ -160,7 +160,7 @@ curl http://localhost:8080/blockNumber
 -  **Test locally before deployment using Docker**
 - 
 
-## Future Improvements for Production Readiness
+## 6. Future Improvements for Production Readiness
 
 1. **Logging & Monitoring**: Use structured logging with log aggregation (e.g., AWS CloudWatch, Loki).
 2. **Security**: Implement authentication for API requests.
